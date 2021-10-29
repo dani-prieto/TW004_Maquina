@@ -33,8 +33,15 @@ public class Refrescos {
 		return precio;
 	}
 	
-	public void recargarRefrescos(int cantidad) {
-		this.cantidad= (cantidad+this.cantidad);
+	public boolean recargarRefrescos(int cantidad) {
+		boolean t= true;
+		if(cantidad<0) {
+			System.out.println("no se puede recargar negativo");
+			t=false;
+		}else {
+			this.cantidad= (cantidad+this.cantidad);
+		}
+		return t;
 	}
 
 

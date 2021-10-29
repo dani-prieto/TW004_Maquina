@@ -23,7 +23,8 @@ public class Maquina {
 	
 	public boolean comprarRefrescos(int cantidad, double dinero, int posicion) {
 		boolean a=true;
-		if(dinero*cantidad<refrescos[posicion].getPrecio()*cantidad || cantidad>refrescos[posicion].getCantidad()) {
+		if(dinero*cantidad<refrescos[posicion].getPrecio()*cantidad || cantidad>refrescos[posicion].getCantidad()
+				|| dinero*cantidad - refrescos[posicion].getPrecio()*cantidad > cambios) {
 			a=false;
 			System.out.println("No se puede comprar");
 		}
